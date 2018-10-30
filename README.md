@@ -1,3 +1,3 @@
 # Interval
 
-A (completely unecessary) QOL setInterval wrapper
+A (completely unnecessary) QOL setInterval wrapper
