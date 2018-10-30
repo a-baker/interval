@@ -3,10 +3,14 @@ class Interval {
         this.fn = fn;
         this.delay = delay;
         this.running = false;
+        this.count = 0;
     }
 
     start(...args) {
-        this.id = setInterval(this.fn, this.delay, ...args);
+        this.id = setInterval((...args) => {
+            this.count++;
+            this.fn(...args);
+        }, this.delay, ...args);
         this.running = true;
     }
 
