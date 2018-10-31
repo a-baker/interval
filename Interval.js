@@ -7,10 +7,14 @@ class Interval {
     }
 
     start(...args) {
+        if (typeof this.fn !== 'function')
+            return console.error('No function provided');
+        
         this.id = setInterval((...args) => {
             this.count++;
             this.fn(...args);
         }, this.delay, ...args);
+        
         this.running = true;
     }
 
